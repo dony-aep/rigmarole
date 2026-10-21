@@ -45,10 +45,11 @@ macOS, también el de Homebrew) o por cualquier otro que se elija.
 
 ## Instalación
 
-### Instalación rápida (recomendada)
+Cada [release](https://github.com/dony-aep/rigmarole/releases/latest) trae la extensión firmada
+de dos formas: un `.zxp` para el instalador y un zip para copiarla a mano. Ninguna de las dos
+necesita el modo de depuración de CEP ni tocar el registro.
 
-Cada [release](https://github.com/dony-aep/rigmarole/releases/latest) trae un `.zxp` firmado.
-No necesita el modo de depuración ni claves del registro.
+### Instalación rápida (recomendada)
 
 1. Descarga e instala el [ZXP/UXP Installer de aescripts + aeplugins](https://aescripts.com/learn/zxp-installer/),
    gratuito, para Windows y macOS.
@@ -65,14 +66,14 @@ del engranaje), activa **Install for current user only** y vuelve a instalar.
 ### Instalación manual (zip)
 
 1. Descarga y descomprime `rigmarole-vX.Y.Z.zip`.
-2. Copia la carpeta `com.donyaep.Rigmarole` que trae en tu carpeta de extensiones CEP:
+2. Con After Effects cerrado, copia la carpeta `com.donyaep.Rigmarole` que trae en tu carpeta
+   de extensiones CEP:
    - Windows: `%APPDATA%\Adobe\CEP\extensions\`
    - macOS: `~/Library/Application Support/Adobe/CEP/extensions/`
-3. El zip no está firmado, así que CEP necesita el modo de depuración una vez:
-   - Windows: doble clic en el `Add Keys.reg` del zip, o ejecuta
-     `reg add "HKCU\Software\Adobe\CSXS.11" /v PlayerDebugMode /t REG_SZ /d 1 /f`
-   - macOS: `defaults write com.adobe.CSXS.11 PlayerDebugMode 1 && killall cfprefsd`
-4. Reinicia After Effects y abre **Window > Extensions > Rigmarole**.
+3. Abre After Effects y ve a **Window > Extensions > Rigmarole**.
+
+No cambies ningún archivo de la carpeta: con uno distinto, la firma deja de valer y After Effects
+no carga el panel.
 
 ## Uso
 
