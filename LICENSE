@@ -1,0 +1,29 @@
+Rigmarole
+Copyright (c) 2026 dony-aep. Todos los derechos reservados.
+
+Rigmarole es gratuito. Puedes descargarlo, instalarlo y usarlo sin coste, en tantos equipos como
+quieras, en proyectos personales y comerciales. Los vídeos que grabes con él son tuyos.
+
+Sin permiso por escrito del autor no está permitido:
+
+- Redistribuir Rigmarole, entero o en parte, venderlo, incluirlo en otros productos o publicarlo
+  en otros sitios de descarga. Para compartirlo, enlaza la página de releases:
+  https://github.com/dony-aep/rigmarole/releases
+- Modificarlo, descompilar los archivos .jsxbin o intentar obtener su código fuente de cualquier
+  otra forma, salvo en lo que la ley aplicable lo permita expresamente.
+- Quitar o cambiar este aviso o los avisos de terceros que lo acompañan.
+
+Rigmarole se ofrece tal cual, sin garantía de ningún tipo, expresa ni implícita. En ningún caso
+el autor responde de daños o pérdidas derivados de su uso, en la medida en que la ley aplicable lo
+permita.
+
+Componentes de terceros
+
+Esta licencia no se aplica a los componentes de terceros que acompañan a Rigmarole, que conservan
+la suya:
+
+- ffmpeg (bin/ffmpeg.exe y bin/ffmpeg), bajo la GPL v2 o posterior, que se ejecuta como un
+  programa aparte. Su licencia está en bin/LICENSE.ffmpeg.txt y de dónde sale su código fuente,
+  en bin/README.ffmpeg.txt.
+- Las bibliotecas y fuentes incluidas en la interfaz del panel, con sus licencias en
+  THIRD_PARTY_NOTICES.txt.
