@@ -5,7 +5,7 @@ Todos los cambios notables de Rigmarole se documentan en este archivo.
 El formato está basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/),
 y este proyecto sigue el [Versionado Semántico](https://semver.org/lang/es/).
 
-## [1.0.0] - 2026-10-20
+## [1.0.0] - 2026-10-21
 
 Primera versión.
 
