@@ -5,6 +5,26 @@ Todos los cambios notables de Rigmarole se documentan en este archivo.
 El formato está basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/),
 y este proyecto sigue el [Versionado Semántico](https://semver.org/lang/es/).
 
+## [1.0.1] - 2026-10-22
+
+### Corregido
+
+- **Comps pesadas sin caché.** Con fotogramas que tardan segundos en renderizarse (Element 3D, por ejemplo), el vídeo se quedaba congelado en un fotograma, con destellos negros o con fotogramas atrasados, y solo salía bien con la comp ya en caché. Ahora el panel espera a que After Effects termine cada fotograma, también en «Toda la ventana», hasta 20 s por fotograma. En esas comps grabar tarda más: lo que tarda After Effects en renderizar cada fotograma.
+- **Encontrar la comp en una comp pesada.** La búsqueda fallaba con «No se ve la comp en pantalla» cuando After Effects tardaba en repintar la comp.
+- **El audio rompía el MP4** en proyectos con renders ya terminados o parados en la cola de render.
+- **«Algo tapa parte de la comp» cuando la comp simplemente no cabe.** Ahora dice que no cabe y propone el mayor tamaño que cabe.
+- **Fotogramas en negro en grabaciones largas.** La pantalla ya no se apaga ni se bloquea mientras se graba.
+- **Un aviso de Windows a mitad de la grabación** (el de un instalador, por ejemplo) ya no la corta: la captura espera hasta 30 s a que vuelva el escritorio.
+- **El primer fotograma sin tiradores en Pantalla verde y Pantalla azul**, cuando la grabación empezaba en el fotograma que ya se veía.
+- **«Probar» y el principio y el final de cada grabación tardaban mucho con muchas capas seleccionadas.** El panel quitaba y volvía a poner la selección capa a capa: con 116 capas seleccionadas, «Probar» tardaba 25 s y ahora 9 s; con 289, 54 s y ahora 14 s.
+
+### Cambiado
+
+- Mientras graba, los tiradores del visor desaparecen un momento en cada fotograma: el panel los oculta mientras After Effects renderiza la imagen y los vuelve a enseñar para capturarla.
+- En macOS con pantalla Retina, el selector de tamaño enseña el zoom con el mismo número que After Effects; antes decía «zoom 50 %» con el visor en 100 %.
+- En Pantalla verde y Pantalla azul, el panel avisa si no hay capas seleccionadas: sin selección el vídeo sale de un color liso.
+- «Toda la ventana» graba solo la ventana principal de After Effects: los paneles flotantes, este incluido, y los programas que haya encima ya no salen en el vídeo. Acoplado, el panel sigue saliendo porque forma parte de la ventana.
+
 ## [1.0.0] - 2026-10-21
 
 Primera versión.
@@ -27,4 +47,5 @@ Primera versión.
 - **Los ajustes sobreviven a las actualizaciones.** Se guardan fuera de la caché de After Effects, así que actualizarlo o limpiar los archivos temporales no los borra.
 - **El panel sigue a la comp activa.** Ve cuándo se abre, se cierra o se cambia de comp sin tener que hacer clic en él.
 
+[1.0.1]: https://github.com/dony-aep/rigmarole/releases/tag/v1.0.1
 [1.0.0]: https://github.com/dony-aep/rigmarole/releases/tag/v1.0.0
