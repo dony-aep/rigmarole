@@ -5,6 +5,23 @@ Todos los cambios notables de Rigmarole se documentan en este archivo.
 El formato está basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/),
 y este proyecto sigue el [Versionado Semántico](https://semver.org/lang/es/).
 
+## [1.1.0] - 2026-10-25
+
+### Añadido
+
+- **«Ajustar al visor» en el tamaño.** Mide en cada prueba el sitio que deja el visor y graba al mayor tamaño que cabe, en lugar de quedarse en el zoom fijo anterior: en un visor donde una comp de 1080 × 1080 cabía a 720 × 720, ahora sale a 854 × 854.
+- **Aviso de guías en el visor.** Si el visor tiene activadas las guías Title/Action Safe u otras líneas encima de la comp, «Probar» avisa de que saldrán en el vídeo y dice cómo quitarlas, y la pantalla final lo recuerda si se grabó con ellas. After Effects no deja ocultarlas desde un script.
+- **Fotogramas lentos a la vista.** Mientras graba, si After Effects tarda más de 10 s con un fotograma, el panel dice cuánto lleva con él, para que no parezca colgado.
+- **Tamaño personalizado.** En «Personalizado» se escribe el ancho del vídeo y el alto sigue la proporción de la comp. Si no cabe, el aviso propone el mayor tamaño que cabe exacto, no el de la lista.
+
+### Corregido
+
+- **La cuadrícula del visor impedía encontrar la comp.** Sus líneas tapaban una cuarta parte de la comp y el panel decía «No se ve la comp en pantalla». Ahora la apaga mientras prueba o graba y la vuelve a encender al terminar, así que tampoco sale en el vídeo. En macOS, con el panel flotante, After Effects no deja apagarla desde el panel: entonces dice que es la cuadrícula y cómo quitarla.
+- **Una notificación encima de la comp estropeaba fotogramas.** Si aparecía o se iba una ventana de otro programa sobre la comp, el panel la tomaba por el fotograma nuevo y lo grababa con la imagen anterior. Ahora, con el visor dentro de la ventana de After Effects, solo mira esa ventana para saber cuándo llegó cada fotograma.
+- **Vídeo congelado en comps de más de 20 s por fotograma.** El panel esperaba como mucho 20 s a que After Effects pintara cada fotograma y luego pasaba al siguiente; AE abandonaba el render y el vídeo repetía la misma imagen durante todo el tramo pesado. Ahora espera hasta 2 minutos, y si algún fotograma no cambia en ese tiempo, la pantalla final dice cuántos y en qué tiempos.
+- **Grabación lenta cuando solo se mueven nulls.** Si entre dos fotogramas solo se movía un null que no mueve ninguna capa visible, el panel esperaba igual a que After Effects pintara una imagen que no iba a cambiar: 20 s por fotograma. Ahora graba esos fotogramas sin esa espera, en unos 4 s cada uno.
+- **«A este tamaño no cabe en el visor» con las guías Title/Action Safe activadas.** Las líneas de las guías partían la comp al buscarla en pantalla, y el panel decía que no cabía y proponía un tamaño menor aunque la comp se viera entera. Ahora la encuentra con las guías activadas o sin ellas. Las guías siguen saliendo en el vídeo: se quitan con la tecla ' en el visor.
+
 ## [1.0.1] - 2026-10-22
 
 ### Corregido

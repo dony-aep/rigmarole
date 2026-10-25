@@ -13,7 +13,8 @@ El nombre es la palabra inglesa *rigmarole*: un procedimiento largo y enrevesado
 ## Qué hace
 
 - **Probar antes de grabar.** *Probar* enseña un fotograma tal como saldrá, antes de grabar el
-  work area entero.
+  work area entero, y avisa si las guías Title/Action Safe o la cuadrícula del visor van a salir
+  en el vídeo.
 - **La comp o la ventana entera.** Graba solo la comp, o After Effects entero con el timeline y
   los paneles. Otros monitores y otros programas nunca entran en la captura.
 - **Cuatro modos.** Estándar, Wireframe, Pantalla verde y Pantalla azul. Con los dos últimos
@@ -21,8 +22,10 @@ El nombre es la palabra inglesa *rigmarole*: un procedimiento largo y enrevesado
 - **Con el audio.** Al terminar la captura, After Effects renderiza el audio del work area y se
   une al vídeo. Se puede quitar en Ajustes.
 - **Tamaño en píxeles reales.** El vídeo mide lo que la comp en pantalla: la comp por el zoom del
-  visor por la escala de la pantalla. El panel dice el tamaño antes de grabar, maximiza el visor
-  mientras graba y, si la comp no cabe, propone el mayor tamaño que sí cabe.
+  visor por la escala de la pantalla. Se elige uno de los zooms de After Effects, un ancho
+  cualquiera o *Ajustar al visor*, que mide el visor en cada prueba y usa el mayor tamaño que
+  cabe. El panel maximiza el visor mientras graba y, si la comp no cabe, propone el mayor tamaño
+  que sí cabe.
 - **La comp queda como estaba** al terminar, al cancelar o ante un error: selección de capas,
   zoom, guías, reglas, Fast Previews y Auto Save.
 - **Si ffmpeg falla, no se pierde nada.** Los fotogramas capturados se conservan y se puede
@@ -78,7 +81,8 @@ no carga el panel.
 ## Uso
 
 1. Abre una comp en el visor y ve a **Window > Extensions > Rigmarole**.
-2. Elige un tamaño en *Tamaño*. Cada opción es un zoom del visor con el tamaño de vídeo que da.
+2. Elige un tamaño en *Tamaño*: *Ajustar al visor*, uno de los zooms del visor con el tamaño de
+   vídeo que da, o *Personalizado* para escribir el ancho.
 3. Pulsa *Probar* para ver un fotograma y luego *Grabar* para grabar el work area.
 4. Al terminar, el panel ofrece *Importar al proyecto*, *Mostrar en la carpeta* y
    *Abrir el vídeo*.
