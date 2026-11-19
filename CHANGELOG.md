@@ -5,6 +5,12 @@ Todos los cambios notables de Rigmarole se documentan en este archivo.
 El formato está basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/),
 y este proyecto sigue el [Versionado Semántico](https://semver.org/lang/es/).
 
+## [1.1.1] - 2026-11-19
+
+### Corregido
+
+- **Fuentes del panel con la instalación para todos los usuarios.** Instalado en `C:\Program Files (x86)\Common Files\Adobe\CEP\extensions`, donde lo pone el ZXP Installer de aescripts, el panel no cargaba sus fuentes y el texto salía en la fuente del sistema. El código armaba la URL de cada fuente al abrir el panel, y los paréntesis de esa ruta la invalidaban. Ahora los estilos van en su propio `style.css`, con URL relativas.
+
 ## [1.1.0] - 2026-10-25
 
 ### Añadido
